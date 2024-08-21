@@ -1,6 +1,8 @@
 package com.codecademy.goldmedal.controller;
 
 import com.codecademy.goldmedal.model.*;
+import com.codecademy.goldmedal.repository.CountryRepository;
+import com.codecademy.goldmedal.repository.GoldMedalRepository;
 import org.apache.commons.text.WordUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +15,7 @@ import java.util.stream.Collectors;
 public class GoldMedalController {
     private final CountryRepository countryRepository;
     private final GoldMedalRepository goldMedalRepository;
-
+    
     public GoldMedalController(CountryRepository countryRepository,
                                GoldMedalRepository goldMedalRepository) {
         this.countryRepository = countryRepository;

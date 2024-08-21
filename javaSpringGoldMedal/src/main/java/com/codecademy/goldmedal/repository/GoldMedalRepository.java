@@ -2,12 +2,14 @@ package com.codecademy.goldmedal.repository;
 
 import com.codecademy.goldmedal.model.GoldMedal;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface GoldMedalRepository extends CrudRepository<GoldMedal, Long> {
     List<GoldMedal> getByCountryAndSeasonOrderByYearAsc(String country, String season);
-    int countyByCountry(String country);
+    int countByCountry(String country);
     int countBySeason(String season);
     int countByCountryAndGender(String country, String gender);
     List<GoldMedal> getByCountryOrderByYearAsc(String country);
